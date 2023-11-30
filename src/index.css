@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.thumbs {
+    text-align: center;
+}
+:disabled {
+    opacity: .3;
+}
+.thumbs-wrapper {
+    display: none;
+}
+.StripeElement{
+    border: 1px solid #ebeaea;
+    padding: 8px;
+}
