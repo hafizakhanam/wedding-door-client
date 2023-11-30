@@ -1,4 +1,3 @@
-import { FaPhone } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -59,7 +58,7 @@ const ApprovedPremium = () => {
                                 <td className="border border-slate-300 p-2">{reqPremium.bioDataEmail}</td>
                                 <td className="border border-slate-300 p-2">{reqPremium.bioDataId}</td>
                                 <th className="border border-slate-300 p-2">
-                                     <button onClick={() => handleContact(reqPremium.bioDataId)} className="btn bg-green-600 p-2 btn-md"> <FaPhone className="text-white"/> </button>
+                                     <button onClick={() => handleContact(reqPremium.bioDataId)} className="btn bg-green-600 p-2 btn-md">{reqPremium.status}</button>
                                 </th>
                             </tr>
                             )

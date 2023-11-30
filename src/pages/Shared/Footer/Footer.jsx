@@ -11,13 +11,13 @@ const Footer = () => {
             <div className="max-w-[1280px] mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div className="logo">
-                        <a className="w-48 inline-block" href="/"><img src={logo} alt="Good Food" /></a>
+                        <a className="w-48 inline-block" href="/"><img src={logo} alt="Wedding Door" /></a>
                     </div>
                     <div className="contact">
                         <ul>
                             <li><strong>Address: </strong>223 – 8th Avenue SW Calgary, AB T2P 1B5</li>
                             <Link to="#"><li><strong>Phone: </strong>403.265.3665</li></Link>
-                            <Link to="#"><li><strong>Email: </strong>info@good-food.com</li></Link>
+                            <Link to="#"><li><strong>Email: </strong>info@wedding-door.com</li></Link>
                         </ul>
                     </div>
                     <div className="icon">

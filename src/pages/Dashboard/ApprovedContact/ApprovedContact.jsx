@@ -1,4 +1,3 @@
-import { FaMedal} from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -59,7 +58,7 @@ const ApprovedContact = () => {
                                 <td className="border border-slate-300 p-2">{reqContact.email}</td>
                                 <td className="border border-slate-300 p-2">{reqContact.userBioDataId}</td>
                                 <th className="border border-slate-300 p-2">
-                                     <button onClick={() => handleContact(reqContact.userBioDataId)} className="btn bg-green-600 p-2 btn-md"> <FaMedal className="text-white"/> </button>
+                                     <button onClick={() => handleContact(reqContact.userBioDataId)} className="btn bg-green-600 p-2 btn-md">{reqContact.status}</button>
                                 </th>
                             </tr>
                             )

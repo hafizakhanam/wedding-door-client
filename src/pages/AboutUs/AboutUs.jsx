@@ -20,11 +20,11 @@ const AboutUs = () => {
 
                                 By telling stories, we can even plant ideas, thoughts and emotions into people’s brains.<br/><br/>
 
-                                When it comes to making a purchase on your food website, a good story can make the difference between a potential customer becoming enchanted by your product and ignoring it altogether.<br/><br/>
+                                When it comes to making a purchase on your matrimony website, a good story can make the difference between a potential customer becoming enchanted by your product and ignoring it altogether.<br/><br/>
 
-                                So, we need stories. But what type of stories should you include on your food website?<br/><br/>
+                                So, we need stories. But what type of stories should you include on your matrimony website?<br/><br/>
 
-                                In this article, you’ll learn 3 story frameworks you can use on your food website.<br/><br/>
+                                In this article, you’ll learn 3 story frameworks you can use on your matrimony website.<br/><br/>
 
                                 These stories will help you connect with your prospects, differentiate your goal, and ultimately drive more passion.</p>
                         </div>
