@@ -1,4 +1,4 @@
-import { FaArrowRight, FaBookOpen, FaCalendar, FaEdit, FaEye, FaHeart, FaHome, FaList, FaMedal, FaPhone, FaUsers } from "react-icons/fa";
+import { FaArrowRight, FaBookOpen, FaCrown, FaEdit, FaEye, FaHeart, FaHome, FaMedal, FaPhone, FaUserFriends, FaUsers } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useFavourite from "../hooks/useFavourite";
@@ -39,6 +39,9 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to="approvedContact" className="flex items-center text-white my-2"><FaPhone  className="mr-2"/>Approved Contact Request</NavLink>
                             </li>                            
+                            <li>
+                                <NavLink to="successStory" className="flex items-center text-white my-2"><FaCrown  className="mr-2"/>Success Story</NavLink>
+                            </li>                            
                         </>
                         : <>
                             <li>
@@ -60,10 +63,7 @@ const Dashboard = () => {
                                 <NavLink to="contactReq" className="flex items-center text-white my-2"><FaPhone  className="mr-2"/>My Contact Request ({reqContact.length})</NavLink>
                             </li>
                             <li>
-                                <NavLink to="reservation" className="flex items-center text-white my-2"><FaCalendar  className="mr-2"/>Reservation</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="paymentHistory" className="flex items-center text-white my-2"><FaList  className="mr-2"/>Payment History</NavLink>
+                                <NavLink to="gotMarried" className="flex items-center text-white my-2"><FaUserFriends  className="mr-2"/>Got Married</NavLink>
                             </li>
                         </>
                     }

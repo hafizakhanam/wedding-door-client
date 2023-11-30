@@ -24,6 +24,8 @@ import ContactReq from "../pages/Dashboard/ContactReq/ContactReq";
 import ApprovedContact from "../pages/Dashboard/ApprovedContact/ApprovedContact";
 import ApprovedPremium from "../pages/Dashboard/ApprovedPremium/ApprovedPremium";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import GotMarried from "../pages/Dashboard/GotMarried/GotMarried";
+import SuccessStory from "../pages/Dashboard/SuccessStory/SuccessStory";
 
 export const router = createBrowserRouter([
     {
@@ -96,6 +98,10 @@ export const router = createBrowserRouter([
           path: 'checkout',
           element: <Checkout></Checkout>
         },
+        {
+          path: 'gotMarried',
+          element: <GotMarried></GotMarried>
+        },
 
 
         // Admin routes
@@ -114,7 +120,11 @@ export const router = createBrowserRouter([
         {
           path: 'users',
           element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-        }
+        },
+        {
+          path: 'successStory',
+          element: <AdminRoute><SuccessStory></SuccessStory></AdminRoute>
+        },
       ]
     },
 ]);

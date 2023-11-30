@@ -16,11 +16,7 @@ const AdminHome = () => {
         }
 
     })
-    console.log(stats)
-    //const copiedBioData = stats?.[....bioDataItems];
 
-    // const girlsBioData = stats?.bioDataItems?.filter(entry => entry.gender === "female");
-    // const boysBioData = stats?.bioDataItems?.filter(entry => entry.gender === "male");
     return (
         <div>
             <h2 className="text-3xl">
