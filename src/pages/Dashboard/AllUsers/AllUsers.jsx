@@ -33,7 +33,7 @@ const AllUsers = () => {
     }
 
     const handleMakePremium = user =>{
-        axiosSecure.patch(`/users/admin/${user._id}`)
+        axiosSecure.patch(`/users/premium/${user._id}`)
         .then(res =>{
             if(res.data.modifiedCount > 0){
                 refetch();
