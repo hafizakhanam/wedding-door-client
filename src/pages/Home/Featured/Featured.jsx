@@ -4,7 +4,9 @@ import BioData from "../BioData/BioData";
 
 const Featured = () => {
     const [bioData] = useBioData();
-    const sortedData = bioData.sort((a,b) => {
+    const premiumDatas = bioData.filter(bio => bio.type === 'premium');
+    //console.log(premiumDatas)
+    const sortedData = premiumDatas.sort((a,b) => {
         //console.log(a, b);
         return b.age - a.age;
     })

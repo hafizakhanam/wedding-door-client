@@ -6,7 +6,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const ApprovedContact = () => {
     const axiosSecure = useAxiosSecure();
 
-    const { data: reqContact =[]} = useQuery({
+    const {refetch, data: reqContact =[]} = useQuery({
         queryKey: ['reqContact'],
         queryFn: async () =>{
             const res = await axiosSecure.get('/requestContacts')
@@ -14,25 +14,42 @@ const ApprovedContact = () => {
         }
     })
 
-    const handleContact = id =>{
-        const bioData = {
-            contactStatus: 'approved'
-        }
-        axiosSecure.patch(`/bioData/premium/${id}`, bioData)
-        .then(res =>{
-            console.log(res)
-            if(res.data.modifiedCount > 0){
+    const handleContact = (id, reqId) =>{
+        const patchRequests = [
+            axiosSecure.patch(`/requestContacts/${id}`),
+            axiosSecure.patch(`/bioData/contact/${reqId}`),   
+        ];
+
+        Promise.all(patchRequests)
+            .then(responses => {
+                const bioDataResponse = responses[0];
+                const requestContactResponse = responses[1];
+            
+                if (bioDataResponse.data.modifiedCount > 0 && requestContactResponse.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${id} is premium now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+        // axiosSecure.patch(`/requestContacts/${id}`)
+        // .then(res =>{
+        //     if(res.data.modifiedCount > 0){
                 
-                // refetch();
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${id} is premium now`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
-        })
+        //         refetch();
+        //         Swal.fire({
+        //             position: "top-end",
+        //             icon: "success",
+        //             title: `${id} is premium now`,
+        //             showConfirmButton: false,
+        //             timer: 1500
+        //         });
+        //     }
+        // })
     }
 
     return (
@@ -58,7 +75,7 @@ const ApprovedContact = () => {
                                 <td className="border border-slate-300 p-2">{reqContact.email}</td>
                                 <td className="border border-slate-300 p-2">{reqContact.userBioDataId}</td>
                                 <th className="border border-slate-300 p-2">
-                                     <button onClick={() => handleContact(reqContact.userBioDataId)} className="btn bg-green-600 p-2 btn-md">{reqContact.status}</button>
+                                     <button onClick={() => handleContact(reqContact._id, reqContact.userBioDataId)} className="btn bg-green-600 p-2 btn-md">{reqContact.status}</button>
                                 </th>
                             </tr>
                             )

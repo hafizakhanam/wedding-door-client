@@ -28,7 +28,7 @@ const SuccessCounter = () => {
                         <h3 className="text-2xl  capitalize text-center p-5">boys biodata</h3>
                     </div>
                     <div className="">
-                    <h1 className="text-7xl text-green-600 text-center font-bold"><CountUp end={bioData.length} /></h1>
+                    <h1 className="text-7xl text-green-600 text-center font-bold"><CountUp end={girlsBioData.length+2} /></h1>
                         <h3 className="text-2xl  capitalize text-center p-5">marriages completed</h3>
                     </div>
                 </div> 

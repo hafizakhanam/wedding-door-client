@@ -53,7 +53,7 @@ const AdminHome = () => {
                         <FaBookOpen className="mx-auto"></FaBookOpen>
                         <div className="stat-title ml-2 capitalize">Total premium Bio data</div>
                     </div>
-                    <div className="text-center mt-4">${stats?.femaleCount}</div>
+                    <div className="text-center mt-4">${stats?.premiumCount}</div>
                 </div>
                 <div className=" bg-green-600 rounded-md text-white p-4">
                     <div className="text-2xl text-center">

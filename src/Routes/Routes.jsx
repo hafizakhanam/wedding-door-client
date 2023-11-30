@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
         {
           path: "/bioData/:id",
           element: <PrivateRoute><BioDataDetails></BioDataDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/bioData/${params.id}`)
+          loader: ({params}) => fetch(`https://wedding-door-server.vercel.app/bioData/${params.id}`)
         },
         {
           path: '/login',
@@ -79,12 +79,12 @@ export const router = createBrowserRouter([
         {
           path: 'editBioData/email/:email',
           element: <EditBioData></EditBioData>,
-          loader: ({params}) => fetch(`http://localhost:5000/bioData/email/${params.email}`)
+          loader: ({params}) => fetch(`https://wedding-door-server.vercel.app/bioData/email/${params.email}`)
         },
         {
           path: 'viewBioData/email/:email',
           element: <ViewBioData></ViewBioData>,
-          loader: ({params}) => fetch(`http://localhost:5000/bioData/email/${params.email}`)
+          loader: ({params}) => fetch(`https://wedding-door-server.vercel.app/bioData/email/${params.email}`)
         },
         {
             path: 'favourite',

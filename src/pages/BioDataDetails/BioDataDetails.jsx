@@ -15,7 +15,7 @@ import usePremium from "../../hooks/usePremium";
 
 const BioDataDetails = () => {
     const currentBioData = useLoaderData();
-    const { _id, gender, name, image, dob, height, weight, age, occupation, race, fathersName, mothersName, permanentDiv, presentDiv, partnerAge, partnerHeight, partnerWeight, email, mobile } = currentBioData;
+    const { _id, gender, name, image, dob, height, weight, age, occupation, race, fathersName, mothersName, permanentDiv, presentDiv, partnerAge, partnerHeight, partnerWeight, email, mobile} = currentBioData;
 
     const [bioData] = useBioData(); 
     const copiedBioData = [...bioData];
@@ -30,7 +30,6 @@ const BioDataDetails = () => {
 
     const [isAdmin] = useAdmin();
     const [isPremium] = usePremium();
-
     const handleAddToFavourite  = () =>{
         if(user && user.email){
             const favouriteItem ={

@@ -6,7 +6,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const ApprovedPremium = () => {
     const axiosSecure = useAxiosSecure();
 
-    const { data: reqPremium =[]} = useQuery({
+    const { refetch, data: reqPremium =[]} = useQuery({
         queryKey: ['reqPremium'],
         queryFn: async () =>{
             const res = await axiosSecure.get('/requestPremium')
@@ -14,25 +14,28 @@ const ApprovedPremium = () => {
         }
     })
 
-    const handleContact = id =>{
-        const bioData = {
-            contactStatus: 'approved'
-        }
-        axiosSecure.patch(`/bioData/premium/${id}`, bioData)
-        .then(res =>{
-            console.log(res)
-            if(res.data.modifiedCount > 0){
-                
-                // refetch();
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${id} is premium now`,
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-            }
-        })
+    const handleContact = (id, reqId) =>{
+        const patchRequests = [
+            axiosSecure.patch(`/bioData/premium/${id}`),
+            axiosSecure.patch(`/requestPremium/${reqId}`),
+        ];
+
+        Promise.all(patchRequests)
+            .then(responses => {
+                const bioDataResponse = responses[0];
+                const requestPremiumResponse = responses[1];
+            
+                if (bioDataResponse.data.modifiedCount > 0 && requestPremiumResponse.data.modifiedCount > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `${id} is premium now`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
     }
 
     return (
@@ -58,7 +61,7 @@ const ApprovedPremium = () => {
                                 <td className="border border-slate-300 p-2">{reqPremium.bioDataEmail}</td>
                                 <td className="border border-slate-300 p-2">{reqPremium.bioDataId}</td>
                                 <th className="border border-slate-300 p-2">
-                                     <button onClick={() => handleContact(reqPremium.bioDataId)} className="btn bg-green-600 p-2 btn-md">{reqPremium.status}</button>
+                                     <button onClick={() => handleContact(reqPremium.bioDataId, reqPremium._id)} className="btn bg-green-600 p-2 btn-md">{reqPremium.status}</button>
                                 </th>
                             </tr>
                             )
