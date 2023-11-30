@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../Shared/Cover/Cover";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import menuBg from '../../assets/menu/banner3.jpg'
+import menuBg from '../../assets/home/03.jpeg'
 import useBioData from "../../hooks/useBioData";
 import BioData from "../Home/BioData/BioData";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
