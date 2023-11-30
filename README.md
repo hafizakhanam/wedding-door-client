@@ -1,8 +1,11 @@
-# React + Vite
+### Project Name: Wedding door
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Project URL: 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Project Features: 
+1. User can Register
+2. User can Login
+3. User can add his/her bio data
+4. User can update his/her bio data
+5. User can add any bio data to favorite list
+6. User can request to be premium
